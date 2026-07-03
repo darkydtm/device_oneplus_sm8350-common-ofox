@@ -58,8 +58,8 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/vendor_framework_compatibility_matrix.xml
 
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
-ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest_odm.xml
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/vintf/manifest.xml
+ODM_MANIFEST_FILES := $(COMMON_PATH)/vintf/manifest_odm.xml
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 3
@@ -87,6 +87,9 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
 #TARGET_KERNEL_SOURCE := kernel/oneplus/sm8350
 #TARGET_KERNEL_CONFIG := vendor/lahaina-qgki_defconfig
+
+# Kernel modules
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery))
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
@@ -123,8 +126,10 @@ TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
 # Recovery
 #BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
+BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 BOARD_USES_RECOVERY_AS_BOOT := true
-#TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/init/fstab.default
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/init/fstab.default
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
