@@ -38,8 +38,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a76
 
-TARGET_USES_64_BIT_BINDER := true
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := lahaina
 
@@ -62,7 +60,7 @@ DEVICE_MANIFEST_FILE := $(COMMON_PATH)/vintf/manifest.xml
 ODM_MANIFEST_FILES := $(COMMON_PATH)/vintf/manifest_odm.xml
 
 # Kernel
-BOARD_BOOT_HEADER_VERSION := 3
+BOARD_BOOT_HEADER_VERSION := 4
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := \
     androidboot.hardware=qcom \
