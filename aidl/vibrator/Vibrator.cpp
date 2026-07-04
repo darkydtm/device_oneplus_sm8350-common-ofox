@@ -189,11 +189,12 @@ int InputFFDevice::play(int effectId, uint32_t timeoutMs, long *playLengthMs) {
 #endif
 
     /* For QMAA compliance, return OK even if vibrator device doesn't exist */
-    if (mVibraFd == INVALID_VALUE) {
-        if (playLengthMs != NULL)
-            *playLengthMs = 0;
-            return 0;
-    }
+	if (mVibraFd == INVALID_VALUE) {
+		if (playLengthMs != NULL) {
+			*playLengthMs = 0;
+		}
+		return 0;
+	}
 
     if (timeoutMs != 0) {
         if (mCurrAppId != INVALID_VALUE) {
@@ -646,4 +647,3 @@ ndk::ScopedAStatus Vibrator::alwaysOnDisable(int32_t id __unused) {
 }  // namespace hardware
 }  // namespace android
 }  // namespace aidl
-
