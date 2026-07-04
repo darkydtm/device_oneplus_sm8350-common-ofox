@@ -630,6 +630,43 @@ ndk::ScopedAStatus Vibrator::compose(const std::vector<CompositeEffect>& composi
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
 
+ndk::ScopedAStatus Vibrator::getResonantFrequency(float* _aidl_return __unused) {
+	return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+}
+
+ndk::ScopedAStatus Vibrator::getQFactor(float* _aidl_return __unused) {
+	return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+}
+
+ndk::ScopedAStatus Vibrator::getFrequencyResolution(float* _aidl_return __unused) {
+	return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+}
+
+ndk::ScopedAStatus Vibrator::getFrequencyMinimum(float* _aidl_return __unused) {
+	return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+}
+
+ndk::ScopedAStatus Vibrator::getBandwidthAmplitudeMap(std::vector<float>* _aidl_return __unused) {
+	return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+}
+
+ndk::ScopedAStatus Vibrator::getPwlePrimitiveDurationMax(int32_t* _aidl_return __unused) {
+	return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+}
+
+ndk::ScopedAStatus Vibrator::getPwleCompositionSizeMax(int32_t* _aidl_return __unused) {
+	return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+}
+
+ndk::ScopedAStatus Vibrator::getSupportedBraking(std::vector<Braking>* _aidl_return __unused) {
+	return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+}
+
+ndk::ScopedAStatus Vibrator::composePwle(const std::vector<PrimitivePwle>& composite __unused,
+		const std::shared_ptr<IVibratorCallback>& callback __unused) {
+	return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+}
+
 ndk::ScopedAStatus Vibrator::getSupportedAlwaysOnEffects(std::vector<Effect>* _aidl_return __unused) {
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
