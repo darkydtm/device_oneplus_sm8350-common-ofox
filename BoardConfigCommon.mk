@@ -87,6 +87,16 @@ BOARD_RAMDISK_USE_LZ4 := true
 #TARGET_KERNEL_CONFIG := vendor/lahaina-qgki_defconfig
 
 # Kernel modules
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := \
+	$(COMMON_PATH)/prebuilt/modules/q6_pdr_dlkm.ko \
+	$(COMMON_PATH)/prebuilt/modules/q6_notifier_dlkm.ko \
+	$(COMMON_PATH)/prebuilt/modules/snd_event_dlkm.ko \
+	$(COMMON_PATH)/prebuilt/modules/apr_dlkm.ko \
+	$(COMMON_PATH)/prebuilt/modules/adsp_loader_dlkm.ko \
+	$(COMMON_PATH)/prebuilt/modules/aw8697.ko \
+	$(COMMON_PATH)/prebuilt/modules/haptic.ko \
+	$(COMMON_PATH)/prebuilt/modules/msm_drm.ko
+
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery))
 
 # Platform

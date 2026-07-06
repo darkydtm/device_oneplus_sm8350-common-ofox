@@ -1,2 +1,7 @@
+q6_pdr_dlkm.ko
+q6_notifier_dlkm.ko
+snd_event_dlkm.ko
+apr_dlkm.ko
 adsp_loader_dlkm.ko
-msm_drm.ko
+aw8697.ko
+haptic.ko
